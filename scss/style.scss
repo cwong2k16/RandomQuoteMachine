@@ -1,0 +1,49 @@
+$myred: #DC143C;
+$font-family: "Arial Black", Helvetica, sans-serif;
+$font-size: 40px;
+$padding: 25px 0px 25px 0px;
+$button-color: #2196f3; // new quote
+$button-color2: #0084b4; // tweet
+
+@mixin bgc($bgcolor){
+  background-color: $bgcolor;
+  color: lightgrey;;
+}
+
+@mixin border-radius($radius){
+  border-radius: $radius;
+}
+
+.background{
+  @include bgc(black);
+  text-align: center;
+}
+
+.card{
+  @include bgc($myred);
+  @include border-radius(50px);
+  width: 60%;
+  left: 50%;
+  margin: auto;
+  margin-top: 3%;
+  padding: $padding;
+}
+
+.text{
+  @extend .card;
+  @include bgc(darkgrey);
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+.button-style{
+  font-family: $font-size;
+  margin-top: 10px;
+  font-size: $font-size/2;
+  background-color: $button-color;
+  color: black;
+  
+  &.twitter{
+  background-color: $button-color2;
+  }
+}
